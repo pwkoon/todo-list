@@ -14,6 +14,7 @@ export class MessageStoreImpl {
       messages: observable,
       addMessage: action,
       toggleMessage: action,
+      clearMessages: action,
       status: computed
     });
 
@@ -32,6 +33,10 @@ export class MessageStoreImpl {
     if (index > -1){
       this.messages[index].noted = !this.messages[index].noted;
     }
+  }
+
+  clearMessages() {
+    this.messages = []
   }
 
   get status() {

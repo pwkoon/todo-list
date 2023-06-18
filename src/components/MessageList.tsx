@@ -41,6 +41,7 @@ export const MessageList: React.FC<MessageListProps> = observer(({messageStore})
           )
         })}
       </ul>
+      <button onClick={() => messageStore.clearMessages()}>Delete all!</button>
     </>
   )
 });

@@ -18,14 +18,16 @@ function Person() {
   const welcomeUser = (): void => {
     let username = lastName + " " + firstName
     username = username.toUpperCase()
-    setPersonName(username)
+    setPersonName(username);
+    setFirstName("");
+    setLastName("");
   }
 
   return (
     <>
       <div>Hello {personName}</div>
-      <input type='text' placeholder='first name' name="first" onChange={handleChange}/>
-      <input type='text' placeholder='last name' name="last" onChange={handleChange}/>
+      <input type='text' placeholder='first name' value={firstName} name="first" onChange={handleChange}/>
+      <input type='text' placeholder='last name' value={lastName} name="last" onChange={handleChange}/>
       <button onClick={welcomeUser}>Confirm</button>
     </>
   )
